@@ -15,6 +15,7 @@ public class NotificationListener extends JobExecutionListenerSupport {
 	public void afterJob(final JobExecution jobExecution) {
 		if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
 			logger.info("Job finished!");
+			logger.info("Total data write in file:" + TrackingProcessor.count);
 		}
 	}
 
